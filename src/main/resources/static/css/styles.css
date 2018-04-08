@@ -1,0 +1,19 @@
+/* css file to format the web pages */
+
+body{
+    padding: 3rem;
+}
+
+img.urgent-icon{ /* format the urgent icon's size*/
+    height: 1.5rem;
+}
+
+/* align the page */
+
+li{
+    min-height: 2rem;
+}
+
+li > * {
+    vertical-align: text-top;
+}

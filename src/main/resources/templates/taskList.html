@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org"> <!-- define the document -->
+<head> <!-- metadata container -->
+
+    <!-- Milligram stylesheet -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+    <title>All Tasks</title> <!-- page title -->
+</head>
+<body> <!-- page body -->
+
+<h1>All the tasks</h1> <!-- most important page heading -->
+
+<h2 th:text="${ tasks.size()} + ' task(s) to do' ">Tasks to Do!</h2> <!-- header for task list -->
+
+<ul> <!-- unordered list -->
+    <li th:each="task : ${tasks}"> <!-- list item -->
+        <span th:if="${task.urgent}"><img class="urgent-icon" src="img/Picture1.png"></span> <!-- ad the urgen icon if task is urgent -->
+        <span th:text="${task.text}"></span> <!-- display the task text inline -->
+    </li>
+</ul>
+
+<a href="/">Add a new task</a> <!-- hyperlink to the home page -->
+
+</body>
+</html>
